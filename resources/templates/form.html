@@ -1,0 +1,10 @@
+<h2>Add a snippet</h2>
+<form action="/snippets" method="post">
+    {% csrf-field %}
+    <div class="form-group">
+        <label for="snippet">Snippet</label>
+        <textarea class="form-control" name="snippet" id="snippet" rows="10"></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Add</button>
+</form>

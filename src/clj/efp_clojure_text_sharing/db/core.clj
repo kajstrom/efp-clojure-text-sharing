@@ -12,14 +12,19 @@
 (defstate db
   :start (:db db*))
 
-(defn create-user [user]
-  (mc/insert db "users" user))
+(def coll "snippets")
 
-(defn update-user [id first-name last-name email]
-  (mc/update db "users" {:_id id}
-             {$set {:first_name first-name
-                    :last_name last-name
-                    :email email}}))
+(defn create-snippet [snippet]
+  (mc/insert db coll snippet))
 
-(defn get-user [id]
-  (mc/find-one-as-map db "users" {:_id id}))
+;(defn create-user [user]
+;  (mc/insert db "users" user))
+
+;(defn update-user [id first-name last-name email]
+;  (mc/update db "users" {:_id id}
+;             {$set {:first_name first-name
+;                    :last_name last-name
+;                    :email email}}))
+
+;(defn get-user [id]
+;  (mc/find-one-as-map db "users" {:_id id}))
