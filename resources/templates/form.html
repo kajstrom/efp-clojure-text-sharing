@@ -1,9 +1,13 @@
+{% if snippet|empty? %}
 <h2>Add a snippet</h2>
+{% else %}
+<h2>Create a new snippet based on an existing snippet</h2>
+{% endif %}
 <form action="/snippets" method="post">
     {% csrf-field %}
     <div class="form-group">
         <label for="snippet">Snippet</label>
-        <textarea class="form-control" name="snippet" id="snippet" rows="10"></textarea>
+        <textarea class="form-control" name="snippet" id="snippet" rows="10">{{snippet}}</textarea>
     </div>
 
     <button class="btn btn-primary" type="submit">Add</button>

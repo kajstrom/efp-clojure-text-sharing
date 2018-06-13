@@ -2,10 +2,6 @@
 
 generated using Luminus version "2.9.12.62"
 
-## Todo
-
-- Creating a new snippet by editing an existing snippet
-
 ## Prerequisites
 
 You will need [Leiningen][1] 2.0 or above installed.
