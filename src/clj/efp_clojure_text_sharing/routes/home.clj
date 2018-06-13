@@ -26,7 +26,8 @@
 (defn add-snippet [{:keys [params]}]
   (let [timestamp (f/unparse (f/formatters :date-time) (t/now))
         slug (md5 (str (:snippet params) timestamp))]
-    (db/create-snippet {:slug slug :snippet (:snippet params)})))
+    (db/create-snippet {:slug slug :snippet (:snippet params)})
+    (response/found (str "/snippets/" slug))))
 
 (defroutes home-routes
   (GET "/" [] (home-page))
