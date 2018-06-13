@@ -20,6 +20,9 @@
 (defn about-page []
   (layout/render "about.html"))
 
+(defn snippet-page [slug]
+  (layout/render "slug.html" (db/get-snippet-by-slug slug)))
+
 (defn add-snippet [{:keys [params]}]
   (let [timestamp (f/unparse (f/formatters :date-time) (t/now))
         slug (md5 (str (:snippet params) timestamp))]
@@ -28,5 +31,6 @@
 (defroutes home-routes
   (GET "/" [] (home-page))
   (POST "/snippets" request (add-snippet request))
+  (GET "/snippets/:slug" [slug] (snippet-page slug))
   (GET "/about" [] (about-page)))
 

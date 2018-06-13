@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h1>View snippet</h1>
+
+    <div>
+        {{snippet}}
+    </div>
+
+    <a href="/snippets/{{slug}}/edit">Edit</a>
+</div>
+{% endblock %}

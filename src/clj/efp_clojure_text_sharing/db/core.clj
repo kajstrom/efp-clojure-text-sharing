@@ -17,6 +17,9 @@
 (defn create-snippet [snippet]
   (mc/insert db coll snippet))
 
+(defn get-snippet-by-slug [slug]
+  (mc/find-one-as-map db coll {:slug slug}))
+
 ;(defn create-user [user]
 ;  (mc/insert db "users" user))
 

@@ -4,7 +4,6 @@ generated using Luminus version "2.9.12.62"
 
 ## Todo
 
-- Snippet display page
 - Redirect to display page after adding a snippet
 - Creating a new snippet by editing an existing snippet
 
